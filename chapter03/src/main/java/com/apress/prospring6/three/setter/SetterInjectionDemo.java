@@ -29,6 +29,8 @@ package com.apress.prospring6.three.setter;
 
 import com.apress.prospring6.two.decoupled.MessageProvider;
 import com.apress.prospring6.two.decoupled.MessageRenderer;
+import jakarta.annotation.Resource;
+import jakarta.inject.Inject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -76,6 +78,8 @@ class HelloWorldMessageProvider implements MessageProvider {
 class StandardOutMessageRenderer implements MessageRenderer {
     private MessageProvider messageProvider;
 
+    //@Resource(name = "provider")
+    //@Inject
     @Autowired
     @Override
     public void setMessageProvider(MessageProvider provider) {
