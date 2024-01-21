@@ -9,7 +9,7 @@ public class Runner {
         ctx.register(Singer.class);
         ctx.refresh();
 
-        Singer s = (Singer) ctx.getBean("johnMayer");
-        s.sing();
+        var s = ctx.getBeansOfType(Singer.class);
+
     }
 }
