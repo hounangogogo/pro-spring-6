@@ -35,11 +35,19 @@ package com.apress.prospring6.five.manual;
 /**
  * Created by iuliana.cosmina on 06/04/2022
  */
-public class Concert  implements Performance{
+public class Concert implements Performance{
     private static Logger LOGGER = LoggerFactory.getLogger(Concert.class);
     @Override
     public void execute() {
         LOGGER.info(" ... La la la la laaaa ...");
+        try {
+            Thread.sleep(ofMillis(2000).toMillis());
+        } catch (InterruptedException e) {}
+    }
+
+    @Override
+    public void run() {
+        LOGGER.info(" ... MIMIMIMIMIMIMI ...");
         try {
             Thread.sleep(ofMillis(2000).toMillis());
         } catch (InterruptedException e) {}

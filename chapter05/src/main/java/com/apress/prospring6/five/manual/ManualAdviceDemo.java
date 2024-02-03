@@ -55,6 +55,7 @@ public class ManualAdviceDemo {
         Performance proxy = (Performance) pf.getProxy();
 
         proxy.execute();
+        proxy.run();
     }
 }
 

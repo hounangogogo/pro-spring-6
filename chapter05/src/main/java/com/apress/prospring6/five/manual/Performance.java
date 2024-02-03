@@ -29,4 +29,5 @@ SOFTWARE.
 
 public interface Performance {
     void execute();
+    void run();
 }
