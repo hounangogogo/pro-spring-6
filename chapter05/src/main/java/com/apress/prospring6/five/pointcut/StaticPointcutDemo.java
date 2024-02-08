@@ -32,6 +32,8 @@ import com.apress.prospring6.five.common.GreatGuitarist;
 import com.apress.prospring6.five.common.SimpleAroundAdvice;
 import com.apress.prospring6.five.common.Singer;
 import org.aopalliance.aop.Advice;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.aop.Advisor;
 import org.springframework.aop.ClassFilter;
 import org.springframework.aop.Pointcut;
@@ -45,8 +47,11 @@ import java.lang.reflect.Method;
  * Created by iuliana.cosmina on 10/04/2022
  */
 class SimpleStaticPointcut extends StaticMethodMatcherPointcut {
+    private static Logger logger = LoggerFactory.getLogger(SimpleStaticPointcut.class);
+
     @Override
     public boolean matches(Method method, Class<?> cls) {
+        logger.debug("Static check for " + method.getName());
         return ("sing".equals(method.getName()));
     }
 
